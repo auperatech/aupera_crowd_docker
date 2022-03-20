@@ -22,6 +22,8 @@ docker pull auperastor/aupera_crowd:2.0.0
 
 # 4 Start docker and AI service
 
+Please make sure that the server running the U30 can access the Internet , because the U30 device needs to be connected to the Internet to update time information and activate DRM.
+
 ## 4.1 Start docker
 1. Create docker container
    - Port `56109` is the API server port of crowd flow
@@ -146,15 +148,27 @@ onvif_port = 57077
   1. If there are no logs, please check the input video and AI parameters are available.
 
   2. If the edge device fails to send notification to the client, please check whether the notification server IP is correct. You can use `ping` command to check.
-  3. If notification server IP is correct, please turn off network firewall  or update the firewall of PC. For example:
+  3. If notification server IP is correct, please turn off network firewall  or update the firewall of PC.
 
-  ![image-20220311160548476](C:\Users\14738\AppData\Roaming\Typora\typora-user-images\image-20220311160548476.png)
 
-![image-20220311160625539](C:\Users\14738\AppData\Roaming\Typora\typora-user-images\image-20220311160625539.png)
 
-![image-20220311160645383](C:\Users\14738\AppData\Roaming\Typora\typora-user-images\image-20220311160645383.png)
+### 6.1.3 Client can't connect API server 
 
-![image-20220311160725074](C:\Users\14738\AppData\Roaming\Typora\typora-user-images\image-20220311160725074.png)
+If the client can connect to the API server at the beginning, then it fails to connect to the server after running for a while.
+
+1. Please login the U30 device `10.10.10.6` to check if the manager process is running. The device whose IP is 10.10.10.6 runs the API server by default
+
+   ```
+   root@v205-vitis:~# ps -x | grep mc_manager
+    5966 ?        Ss     0:10 SCREEN -S aupm -dm mc_manager --manager-port 44101 --worker-port 44102 --engine aup_crowd_app_manager
+    5967 pts/6    Ssl+ 190:23 mc_manager --manager-port 44101 --worker-port 44102 --engine aup_crowd_app_manager
+   ```
+
+2. If the process named `mc_manager` is not running now, you need to restart it manually by executing the command line. And you can use `ps -x | grep mc_manager`  to check again. If it doesn't work, you can execute command line  `cd /D0/;./start` to install application for this device again. 
+
+   ```
+   screen -S aupm -dm mc_manager --manager-port 44101 --worker-port 44102 --engine aup_crowd_app_manager
+   ```
 
 
 
@@ -183,3 +197,4 @@ onvif_port = 57077
 There is a configure file can adjust the application installation list. You can modify this list. 
 ```
 {NFS_ABS_PATH}/CROWD-2.0.0/package/D0-image/ai_app_install.list
+```

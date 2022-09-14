@@ -10,12 +10,12 @@ Instructions on how to start docker and use the client.
 
 ```
 docker pull auperastor/aupera_crowd:2.0.0
-docker pull auperastor/stream:1.0.1
+docker pull auperastor/stream:1.0.2
 ```
 # 3 How to start stream
 3.1  Create docker container
 ```
-docker run -itd --name streaming -p 554:554 -p 10008:10008 auperastor/stream:1.0.1 bash
+docker run -itd --name streaming -p 554:554 -p 10008:10008 auperastor/stream:1.0.2 bash
 ```
 3.2 Go into docker
 ```
@@ -61,8 +61,8 @@ sudo docker exec -it aupera_crowd_app bash start.sh
 ## 6.1 Car_reid
 
 - Client pkg [Onedrive link](https://auperatechvancouver.sharepoint.com/:f:/s/SW/EtX-2Q8-EcREmZXPfCCIM6YBzlMC9ir-ieJwf12puvBUiw?e=nfIaZn)
-
 - User Guide [Onedrive link ](https://auperatechvancouver-my.sharepoint.com/:b:/g/personal/dou_zhang_auperatech_com/EYWfFLszq1JLm_AtfCELgPsB-7II8DqKzRvZpjSsQcut1Q?e=otfNFv)  refer to step 6、7
+- json_file [Onedrive link ](https://auperatechvancouver.sharepoint.com/:f:/g/EqYY7QtA3ItMkTovbfb6MmcBWTO8mW8us1RbYdqU04eBtw?e=UqBg2L) 
 
 ```
 [server]

@@ -9,7 +9,7 @@ Instructions on how to start docker and use the client.
 # 2 Pull image
 
 ```
-docker pull auperastor/aupera_crowd:2.0.0
+docker pull auperastor/aupera_crowd:2.1.0
 docker pull auperastor/stream:1.0.2
 ```
 # 3 How to start stream
@@ -163,15 +163,15 @@ onvif_port = 57077
   2. If the edge device fails to send notification to the client, please check whether the notification server IP is correct. You can use `ping` command to check.
   3. If notification server IP is correct, please turn off network firewall  or update the firewall of PC. For example:
 
-  ![image-20220914171026743](../../AppData/Roaming/Typora/typora-user-images/image-20220914171026743.png)
+  ![image-20220914171026743](images/image-20220914171026743.png)
 
-![image-20220914170656172](../../AppData/Roaming/Typora/typora-user-images/image-20220914170656172.png)
+![image-20220914170656172](images/image-20220914170656172.png)
 
-![image-20220914170811318](../../AppData/Roaming/Typora/typora-user-images/image-20220914170811318.png)
+![image-20220914170811318](images/image-20220914170811318.png)
 
 
 
-![image-20220914170830049](../../AppData/Roaming/Typora/typora-user-images/image-20220914170830049.png)
+![image-20220914170830049](images/image-20220914170830049.png)
 
 ## 7.2 Crowd flow
 

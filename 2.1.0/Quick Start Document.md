@@ -47,7 +47,7 @@ sudo docker create --name aupera_crowd_app  -it --privileged=true -v /opt/aupera
 ```
 - Or run a temporary container
 ```
-sudo docker create --name aupera_crowd_app --rm -it --privileged=true -v /opt/aupera/crowd/:/opt/aupera/crowd/ -e NFS_ABS_PATH=/opt/aupera/crowd/ -p 56109:56109 -p 56110:56110 auperastor/aupera_crowd:2.1.0 bash
+sudo docker run --name aupera_crowd_app --rm -it --privileged=true -v /opt/aupera/crowd/:/opt/aupera/crowd/ -e NFS_ABS_PATH=/opt/aupera/crowd/ -p 56109:56109 -p 56110:56110 auperastor/aupera_crowd:2.1.0 bash
 ```
 2. Start docker container
 ```
